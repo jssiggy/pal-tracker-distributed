@@ -1,28 +1,33 @@
 # users
-curl -i -XPOST -H"Content-Type: application/json" localhost:8083/registration -d'{"name": "Pete"}'
-curl -i localhost:8083/users/1
-curl -i localhost:8083/users/2
-curl -i -XPOST -H"Content-Type: application/json" localhost:8083/registration -d'{"name": "Sally"}'
-curl -i localhost:8083/users
-curl -i localhost:8083/users/1
-curl -i localhost:8083/users/2
+curl -i -XPOST -H"Content-Type: application/json" registration-pal-jss.apps.pikes.pal.pivotal.io/registration -d'{"name": "Pete"}'
+curl -i registration-pal-jss.apps.pikes.pal.pivotal.io/users/1
+curl -i registration-pal-jss.apps.pikes.pal.pivotal.io/users/2
+curl -i -XPOST -H"Content-Type: application/json" registration-pal-jss.apps.pikes.pal.pivotal.io/registration -d'{"name": "Sally"}'
+curl -i registration-pal-jss.apps.pikes.pal.pivotal.io/users
+curl -i registration-pal-jss.apps.pikes.pal.pivotal.io/users/1
+curl -i registration-pal-jss.apps.pikes.pal.pivotal.io/users/2
 
 # accounts
-curl -i localhost:8083/accounts?ownerId=1
-curl -i localhost:8083/accounts?ownerId=2
+curl -i registration-pal-jss.apps.pikes.pal.pivotal.io/accounts?ownerId=1
+curl -i registration-pal-jss.apps.pikes.pal.pivotal.io/accounts?ownerId=2
 
 # projects
-curl -i -XPOST -H"Content-Type: application/json" localhost:8083/projects -d"{\"name\": \"Basket Weaving\", \"accountId\": 1}"
-curl -i localhost:8083/projects?accountId=1
+curl -i -XPOST -H"Content-Type: application/json" registration-pal-jss.apps.pikes.pal.pivotal.io/projects -d"{\"name\": \"Basket Weaving\", \"accountId\": 1}"
+curl -i registration-pal-jss.apps.pikes.pal.pivotal.io/projects?accountId=1
 
 # allocations
-curl -i -XPOST -H"Content-Type: application/json" localhost:8081/allocations -d"{\"projectId\": 1, \"userId\": 1, \"firstDay\": \"2015-05-17\", \"lastDay\": \"2015-05-18\"}"
-curl -i localhost:8081/allocations?projectId=1
+curl -i -XPOST -H"Content-Type: application/json" allocations-pal-jss.apps.pikes.pal.pivotal.io/allocations -d"{\"projectId\": 1, \"userId\": 1, \"firstDay\": \"2015-05-17\", \"lastDay\": \"2015-05-18\"}"
+curl -i allocations-pal-jss.apps.pikes.pal.pivotal.io/allocations?projectId=1
 
 # stories
-curl -i -XPOST -H"Content-Type: application/json" localhost:8082/stories -d"{\"projectId\": 1, \"name\": \"Find some reeds\"}"
-curl -i localhost:8082/stories?projectId=1
+curl -i -XPOST -H"Content-Type: application/json" backlog-pal-jss.apps.pikes.pal.pivotal.io/stories -d"{\"projectId\": 1, \"name\": \"Find some reeds\"}"
+curl -i backlog-pal-jss.apps.pikes.pal.pivotal.io/stories?projectId=1
 
 # time entries
-curl -i -XPOST -H"Content-Type: application/json" localhost:8084/time-entries/ -d"{\"projectId\": 1, \"userId\": 1, \"date\": \"2015-05-17\", \"hours\": 6}"
-curl -i localhost:8084/time-entries?userId=1
+curl -i -XPOST -H"Content-Type: application/json" timesheets-pal-jss.apps.pikes.pal.pivotal.io/time-entries/ -d"{\"projectId\": 1, \"userId\": 1, \"date\": \"2015-05-17\", \"hours\": 6}"
+curl -i timesheets-pal-jss.apps.pikes.pal.pivotal.io/time-entries?userId=1
+
+registration-pal-jss.apps.pikes.pal.pivotal.io
+allocations-pal-jss.apps.pikes.pal.pivotal.io
+backlog-pal-jss.apps.pikes.pal.pivotal.io
+timesheets-pal-jss.apps.pikes.pal.pivotal.io
